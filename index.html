@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Datos Estudiantiles</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Simulador de Datos Estudiantiles</h1>
+            <p>Genera datos aleatorios de estudiantes y visualiza métricas clave.</p>
+        </header>
+
+        <section class="controls">
+            <label for="cantidadEstudiantes">Número de estudiantes a generar:</label>
+            <input type="number" id="cantidadEstudiantes" value="100" min="1">
+            <button id="generarDatosBtn">Generar Datos</button>
+        </section>
+
+        <section class="data-display">
+            <h2>Datos Generados</h2>
+            <div class="table-container">
+                <table id="tablaEstudiantes">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Sexo</th>
+                            <th>Edad</th>
+                            <th>Tipo Colegio</th>
+                            <th>Ayuda Padres</th>
+                            <th>Distancia (km)</th>
+                            <th>Reprobó Sem. Ant.</th>
+                            <th>Materias Inscritas</th>
+                            <th>Materias Reprobadas</th>
+                            <th>Padres Profesionales</th>
+                            <th>Personas Dependientes</th>
+                            <th>Retiró Universidad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaEstudiantes">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <h2>Métricas y Dashboard</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Distribución por Sexo</h3>
+                    <canvas id="sexoChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Tasa de Retiro Universitario</h3>
+                    <canvas id="retiroChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Distribución de Edades</h3>
+                    <canvas id="edadChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Tipo de Colegio vs. Retiro</h3>
+                    <canvas id="colegioRetiroChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Proyecto de Modelado y Simulación de Sistemas - <span id="currentYear"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
