@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Datos Estudiantiles</title>
+    <title>Simulador de Datos Estudiantiles Avanzado</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📊 Simulador de Datos Estudiantiles</h1>
-            <p>Genera datos aleatorios de estudiantes y visualiza métricas clave.</p>
+            <h1>📊 Simulador de Datos Estudiantiles Avanzado</h1>
+            <p>Genera datos aleatorios de estudiantes, visualiza métricas clave y análisis temporales.</p>
         </header>
 
         <section class="controls">
             <label for="cantidadEstudiantes">Número de estudiantes a generar:</label>
-            <input type="number" id="cantidadEstudiantes" value="100" min="1">
-            <button id="generarDatosBtn">Generar Datos</button>
+            <input type="number" id="cantidadEstudiantes" value="200" min="1"> <button id="generarDatosBtn">Generar Datos</button>
         </section>
 
         <section class="data-display">
@@ -37,11 +36,13 @@
                             <th>Materias Reprobadas</th>
                             <th>Padres Profesionales</th>
                             <th>Personas Dependientes</th>
+                            <th>Fecha Toma Dato</th> {/* Nueva Columna */}
                             <th>Retiró Universidad</th>
                         </tr>
                     </thead>
                     <tbody id="cuerpoTablaEstudiantes">
-                        </tbody>
+                        {/* Los datos se insertarán aquí */}
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -64,6 +65,25 @@
                 <div class="chart-container">
                     <h3>Tipo de Colegio vs. Retiro</h3>
                     <canvas id="colegioRetiroChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        {/* Nueva sección para el gráfico de retiros por año y la prueba KS */}
+        <section class="annual-analysis">
+            <h2>Análisis Anual de Retiros</h2>
+            <div class="charts-grid">
+                 <div class="chart-container">
+                    <h3>Retiros Universitarios por Año</h3>
+                    <canvas id="retirosPorAnioChart"></canvas>
+                </div>
+                <div class="ks-test-results chart-container"> {/* Reutilizamos estilo de chart-container */}
+                    <h3>Prueba Kolmogorov-Smirnov (KS) para Retiros por Año</h3>
+                    <p><strong>Hipótesis Nula ($H_0$)</strong>: La cantidad de retiros por año sigue una distribución uniforme (es decir, los retiros se distribuyen de manera aproximadamente igual entre los años observados).</p>
+                    <p><strong>Hipótesis Alternativa ($H_A$)</strong>: La cantidad de retiros por año NO sigue una distribución uniforme.</p>
+                    <div id="ksResultados">
+                        {/* Los resultados de KS se insertarán aquí */}
+                    </div>
                 </div>
             </div>
         </section>
